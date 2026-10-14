@@ -1,0 +1,2054 @@
+{
+  "summary": {
+    "old_objects": 11,
+    "new_objects": 12,
+    "matched": 10,
+    "status_counts": {
+      "STAY": 2,
+      "MODIFIED": 8,
+      "DELETION": 1,
+      "INSERTION": 2
+    },
+    "change_type_counts": {
+      "TRANSLATION": 3,
+      "ROTATION": 3,
+      "UNIFORM_SCALING": 2,
+      "NON_UNIFORM_SCALING": 1,
+      "SHAPE_CHANGE": 1,
+      "MIRROR": 1,
+      "DELETION": 1,
+      "INSERTION": 2
+    },
+    "elapsed_s": 0.118
+  },
+  "old_objects": [
+    {
+      "idx": 0,
+      "name": "plate",
+      "solid": true,
+      "volume": 57675.22143634345,
+      "area": 15489.026524130308,
+      "centroid": [
+        49.74126557760974,
+        29.869271028687056,
+        4.999999999999999
+      ],
+      "bbox_min": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        100.0,
+        60.0,
+        10.0
+      ],
+      "faces": 8,
+      "edges": 18,
+      "vertices": 12,
+      "face_types": {
+        "CYLINDER": 2,
+        "PLANE": 6
+      },
+      "edge_types": {
+        "CIRCLE": 4,
+        "LINE": 14
+      }
+    },
+    {
+      "idx": 1,
+      "name": "bracket",
+      "solid": true,
+      "volume": 28000.0,
+      "area": 7799.999999999999,
+      "centroid": [
+        220.0,
+        13.57142857142857,
+        13.57142857142857
+      ],
+      "bbox_min": [
+        200.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        240.0,
+        40.0,
+        40.0
+      ],
+      "faces": 8,
+      "edges": 18,
+      "vertices": 12,
+      "face_types": {
+        "PLANE": 8
+      },
+      "edge_types": {
+        "LINE": 18
+      }
+    },
+    {
+      "idx": 2,
+      "name": "block",
+      "solid": true,
+      "volume": 21989.380701702532,
+      "area": 6104.7786842339265,
+      "centroid": [
+        410.3657436879324,
+        15.548615531898575,
+        20.0
+      ],
+      "bbox_min": [
+        400.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        420.0,
+        30.0,
+        40.0
+      ],
+      "faces": 7,
+      "edges": 15,
+      "vertices": 10,
+      "face_types": {
+        "CYLINDER": 1,
+        "PLANE": 6
+      },
+      "edge_types": {
+        "CIRCLE": 2,
+        "LINE": 13
+      }
+    },
+    {
+      "idx": 3,
+      "name": "pin",
+      "solid": true,
+      "volume": 2356.1944901923416,
+      "area": 1099.5574287564898,
+      "centroid": [
+        600.0,
+        3.240032979027245e-16,
+        15.0
+      ],
+      "bbox_min": [
+        595.0,
+        -5.0,
+        0.0
+      ],
+      "bbox_max": [
+        605.0,
+        5.0,
+        30.0
+      ],
+      "faces": 3,
+      "edges": 3,
+      "vertices": 2,
+      "face_types": {
+        "CYLINDER": 1,
+        "PLANE": 2
+      },
+      "edge_types": {
+        "CIRCLE": 2,
+        "LINE": 1
+      }
+    },
+    {
+      "idx": 4,
+      "name": "housing",
+      "solid": true,
+      "volume": 20040.0,
+      "area": 6087.999999999999,
+      "centroid": [
+        820.7904191616766,
+        15.494011976047904,
+        9.209580838323351
+      ],
+      "bbox_min": [
+        800.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        840.0,
+        30.0,
+        20.0
+      ],
+      "faces": 11,
+      "edges": 24,
+      "vertices": 16,
+      "face_types": {
+        "PLANE": 11
+      },
+      "edge_types": {
+        "LINE": 24
+      }
+    },
+    {
+      "idx": 5,
+      "name": "rib",
+      "solid": true,
+      "volume": 2499.9999999999995,
+      "area": 1599.9999999999995,
+      "centroid": [
+        1005.0,
+        25.0,
+        2.5000000000000004
+      ],
+      "bbox_min": [
+        1000.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        1010.0,
+        50.0,
+        5.0
+      ],
+      "faces": 6,
+      "edges": 12,
+      "vertices": 8,
+      "face_types": {
+        "PLANE": 6
+      },
+      "edge_types": {
+        "LINE": 12
+      }
+    },
+    {
+      "idx": 6,
+      "name": "boss",
+      "solid": true,
+      "volume": 27000.0,
+      "area": 5400.0,
+      "centroid": [
+        1215.0,
+        15.0,
+        15.0
+      ],
+      "bbox_min": [
+        1200.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        1230.0,
+        30.0,
+        30.0
+      ],
+      "faces": 6,
+      "edges": 12,
+      "vertices": 8,
+      "face_types": {
+        "PLANE": 6
+      },
+      "edge_types": {
+        "LINE": 12
+      }
+    },
+    {
+      "idx": 7,
+      "name": "shaft",
+      "solid": true,
+      "volume": 5654.866776461615,
+      "area": 2111.150263212465,
+      "centroid": [
+        1400.0,
+        3.56297229306377e-15,
+        25.000000000000004
+      ],
+      "bbox_min": [
+        1394.0,
+        -6.0,
+        0.0
+      ],
+      "bbox_max": [
+        1406.0,
+        6.0,
+        50.0
+      ],
+      "faces": 3,
+      "edges": 3,
+      "vertices": 2,
+      "face_types": {
+        "CYLINDER": 1,
+        "PLANE": 2
+      },
+      "edge_types": {
+        "CIRCLE": 2,
+        "LINE": 1
+      }
+    },
+    {
+      "idx": 8,
+      "name": "old_only",
+      "solid": true,
+      "volume": 3375.0,
+      "area": 1350.0,
+      "centroid": [
+        1607.5,
+        7.5,
+        7.5
+      ],
+      "bbox_min": [
+        1600.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        1615.0,
+        15.0,
+        15.0
+      ],
+      "faces": 6,
+      "edges": 12,
+      "vertices": 8,
+      "face_types": {
+        "PLANE": 6
+      },
+      "edge_types": {
+        "LINE": 12
+      }
+    },
+    {
+      "idx": 9,
+      "name": "cube",
+      "solid": true,
+      "volume": 7999.999999999998,
+      "area": 2399.9999999999995,
+      "centroid": [
+        1809.9999999999998,
+        10.0,
+        10.0
+      ],
+      "bbox_min": [
+        1800.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        1820.0,
+        20.0,
+        20.0
+      ],
+      "faces": 6,
+      "edges": 12,
+      "vertices": 8,
+      "face_types": {
+        "PLANE": 6
+      },
+      "edge_types": {
+        "LINE": 12
+      }
+    },
+    {
+      "idx": 10,
+      "name": "chiral",
+      "solid": true,
+      "volume": 23044.95583330874,
+      "area": 5803.18578948922,
+      "centroid": [
+        2020.0054529809936,
+        15.258471299068253,
+        9.875672033359585
+      ],
+      "bbox_min": [
+        2000.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        2040.0,
+        30.0,
+        20.0
+      ],
+      "faces": 12,
+      "edges": 21,
+      "vertices": 14,
+      "face_types": {
+        "CYLINDER": 3,
+        "PLANE": 9
+      },
+      "edge_types": {
+        "CIRCLE": 6,
+        "LINE": 15
+      }
+    }
+  ],
+  "new_objects": [
+    {
+      "idx": 0,
+      "name": "plate",
+      "solid": true,
+      "volume": 57675.22143634345,
+      "area": 15489.026524130308,
+      "centroid": [
+        49.74126557760974,
+        29.869271028687056,
+        4.999999999999999
+      ],
+      "bbox_min": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        100.0,
+        60.0,
+        10.0
+      ],
+      "faces": 8,
+      "edges": 18,
+      "vertices": 12,
+      "face_types": {
+        "CYLINDER": 2,
+        "PLANE": 6
+      },
+      "edge_types": {
+        "CIRCLE": 4,
+        "LINE": 14
+      }
+    },
+    {
+      "idx": 1,
+      "name": "bracket",
+      "solid": true,
+      "volume": 28000.0,
+      "area": 7799.999999999999,
+      "centroid": [
+        225.0,
+        10.571428571428571,
+        15.571428571428571
+      ],
+      "bbox_min": [
+        205.0,
+        -3.0,
+        2.0
+      ],
+      "bbox_max": [
+        245.0,
+        37.0,
+        42.0
+      ],
+      "faces": 8,
+      "edges": 18,
+      "vertices": 12,
+      "face_types": {
+        "PLANE": 8
+      },
+      "edge_types": {
+        "LINE": 18
+      }
+    },
+    {
+      "idx": 2,
+      "name": "block",
+      "solid": true,
+      "volume": 21989.380701703678,
+      "area": 6104.778684234056,
+      "centroid": [
+        410.365743687926,
+        15.548615531897822,
+        20.0
+      ],
+      "bbox_min": [
+        394.16305409100437,
+        -3.099752356369,
+        0.0
+      ],
+      "bbox_max": [
+        426.4835621667,
+        32.88100975716833,
+        40.0
+      ],
+      "faces": 7,
+      "edges": 15,
+      "vertices": 10,
+      "face_types": {
+        "CYLINDER": 1,
+        "PLANE": 6
+      },
+      "edge_types": {
+        "CIRCLE": 2,
+        "LINE": 13
+      }
+    },
+    {
+      "idx": 3,
+      "name": "pin",
+      "solid": true,
+      "volume": 7952.156404399162,
+      "area": 2474.0042147021013,
+      "centroid": [
+        599.9999999999999,
+        3.210910184317812e-16,
+        15.0
+      ],
+      "bbox_min": [
+        592.5,
+        -7.5,
+        -7.5
+      ],
+      "bbox_max": [
+        607.5,
+        7.5,
+        37.5
+      ],
+      "faces": 3,
+      "edges": 3,
+      "vertices": 2,
+      "face_types": {
+        "CYLINDER": 1,
+        "PLANE": 2
+      },
+      "edge_types": {
+        "CIRCLE": 2,
+        "LINE": 1
+      }
+    },
+    {
+      "idx": 4,
+      "name": "housing",
+      "solid": true,
+      "volume": 34629.119999996874,
+      "area": 8766.719999999319,
+      "centroid": [
+        823.7904191616677,
+        19.49401197604576,
+        14.209580838322822
+      ],
+      "bbox_min": [
+        792.71571856367,
+        -12.111290346773451,
+        -11.249890104923935
+      ],
+      "bbox_max": [
+        854.6664601142277,
+        48.59629506562783,
+        41.18510191778347
+      ],
+      "faces": 11,
+      "edges": 24,
+      "vertices": 16,
+      "face_types": {
+        "PLANE": 11
+      },
+      "edge_types": {
+        "LINE": 24
+      }
+    },
+    {
+      "idx": 5,
+      "name": "rib",
+      "solid": true,
+      "volume": 4999.999999999999,
+      "area": 2699.999999999999,
+      "centroid": [
+        1005.0,
+        25.0,
+        2.5000000000000004
+      ],
+      "bbox_min": [
+        995.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        1015.0,
+        50.0,
+        5.0
+      ],
+      "faces": 6,
+      "edges": 12,
+      "vertices": 8,
+      "face_types": {
+        "PLANE": 6
+      },
+      "edge_types": {
+        "LINE": 12
+      }
+    },
+    {
+      "idx": 6,
+      "name": "boss",
+      "solid": true,
+      "volume": 24643.80550980757,
+      "area": 6185.39816339751,
+      "centroid": [
+        1217.0,
+        15.000000000000002,
+        14.999999999999996
+      ],
+      "bbox_min": [
+        1202.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        1232.0,
+        30.0,
+        30.0
+      ],
+      "faces": 7,
+      "edges": 15,
+      "vertices": 10,
+      "face_types": {
+        "CYLINDER": 1,
+        "PLANE": 6
+      },
+      "edge_types": {
+        "CIRCLE": 2,
+        "LINE": 13
+      }
+    },
+    {
+      "idx": 7,
+      "name": "shaft",
+      "solid": true,
+      "volume": 5654.8667764617,
+      "area": 2111.1502632124934,
+      "centroid": [
+        1399.9999999999998,
+        -4.813921705826395e-12,
+        24.999999999998256
+      ],
+      "bbox_min": [
+        1394.0,
+        -14.188659307856877,
+        -0.5444363796035911
+      ],
+      "bbox_max": [
+        1406.0,
+        14.188659307856877,
+        50.544436379603596
+      ],
+      "faces": 3,
+      "edges": 3,
+      "vertices": 2,
+      "face_types": {
+        "CYLINDER": 1,
+        "PLANE": 2
+      },
+      "edge_types": {
+        "CIRCLE": 2,
+        "LINE": 1
+      }
+    },
+    {
+      "idx": 8,
+      "name": "cube",
+      "solid": true,
+      "volume": 7999.999999999909,
+      "area": 2399.999999999982,
+      "centroid": [
+        1810.0,
+        10.000000000000112,
+        10.000000000000002
+      ],
+      "bbox_min": [
+        1800.0,
+        2.273736754432e-13,
+        0.0
+      ],
+      "bbox_max": [
+        1820.0,
+        20.000000000000004,
+        20.0
+      ],
+      "faces": 6,
+      "edges": 12,
+      "vertices": 8,
+      "face_types": {
+        "PLANE": 6
+      },
+      "edge_types": {
+        "LINE": 12
+      }
+    },
+    {
+      "idx": 9,
+      "name": "chiral",
+      "solid": true,
+      "volume": 23044.955833308664,
+      "area": 5803.18578948926,
+      "centroid": [
+        2020.0054529810068,
+        15.258471299068288,
+        9.875672033359551
+      ],
+      "bbox_min": [
+        2000.010905962,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        2040.010905962,
+        30.0,
+        20.0
+      ],
+      "faces": 12,
+      "edges": 21,
+      "vertices": 14,
+      "face_types": {
+        "CYLINDER": 3,
+        "PLANE": 9
+      },
+      "edge_types": {
+        "CIRCLE": 6,
+        "LINE": 15
+      }
+    },
+    {
+      "idx": 10,
+      "name": "new_only",
+      "solid": true,
+      "volume": 2144.6605848506338,
+      "area": 804.247719318987,
+      "centroid": [
+        2200.0,
+        -7.137338172506853e-17,
+        -6.2450045135165e-17
+      ],
+      "bbox_min": [
+        2192.0,
+        -8.0,
+        -8.0
+      ],
+      "bbox_max": [
+        2208.0,
+        8.0,
+        8.0
+      ],
+      "faces": 1,
+      "edges": 1,
+      "vertices": 2,
+      "face_types": {
+        "SPHERE": 1
+      },
+      "edge_types": {
+        "CIRCLE": 1
+      }
+    },
+    {
+      "idx": 11,
+      "name": "plate_copy",
+      "solid": true,
+      "volume": 57675.22143634345,
+      "area": 15489.026524130308,
+      "centroid": [
+        49.74126557760974,
+        529.8692710286869,
+        4.999999999999999
+      ],
+      "bbox_min": [
+        0.0,
+        500.0,
+        0.0
+      ],
+      "bbox_max": [
+        100.0,
+        560.0,
+        10.0
+      ],
+      "faces": 8,
+      "edges": 18,
+      "vertices": 12,
+      "face_types": {
+        "CYLINDER": 2,
+        "PLANE": 6
+      },
+      "edge_types": {
+        "CIRCLE": 4,
+        "LINE": 14
+      }
+    }
+  ],
+  "candidates": {
+    "0": [
+      {
+        "new_idx": 0,
+        "new_name": "plate",
+        "alignment": "SIMILARITY",
+        "score": 1.0,
+        "shape": 1.0,
+        "eligible": true
+      }
+    ],
+    "1": [
+      {
+        "new_idx": 1,
+        "new_name": "bracket",
+        "alignment": "SIMILARITY",
+        "score": 0.930916,
+        "shape": 1.0,
+        "eligible": true
+      }
+    ],
+    "2": [
+      {
+        "new_idx": 2,
+        "new_name": "block",
+        "alignment": "SIMILARITY",
+        "score": 0.927392,
+        "shape": 1.0,
+        "eligible": true
+      }
+    ],
+    "3": [
+      {
+        "new_idx": 3,
+        "new_name": "pin",
+        "alignment": "SIMILARITY",
+        "score": 0.753704,
+        "shape": 1.0,
+        "eligible": true
+      }
+    ],
+    "4": [
+      {
+        "new_idx": 4,
+        "new_name": "housing",
+        "alignment": "SIMILARITY",
+        "score": 0.770933,
+        "shape": 1.0,
+        "eligible": true
+      }
+    ],
+    "5": [
+      {
+        "new_idx": 5,
+        "new_name": "rib",
+        "alignment": "NONUNIFORM",
+        "score": 0.775,
+        "shape": 0.9,
+        "eligible": true
+      }
+    ],
+    "6": [
+      {
+        "new_idx": 6,
+        "new_name": "boss",
+        "alignment": "PARTIAL",
+        "score": 0.741137,
+        "shape": 0.566009,
+        "eligible": true
+      }
+    ],
+    "7": [
+      {
+        "new_idx": 7,
+        "new_name": "shaft",
+        "alignment": "SIMILARITY",
+        "score": 0.912079,
+        "shape": 1.0,
+        "eligible": true
+      }
+    ],
+    "8": [],
+    "9": [
+      {
+        "new_idx": 8,
+        "new_name": "cube",
+        "alignment": "SIMILARITY",
+        "score": 1.0,
+        "shape": 1.0,
+        "eligible": true
+      }
+    ],
+    "10": [
+      {
+        "new_idx": 9,
+        "new_name": "chiral",
+        "alignment": "SIMILARITY",
+        "score": 0.999918,
+        "shape": 1.0,
+        "eligible": true
+      }
+    ]
+  },
+  "results": [
+    {
+      "old": {
+        "idx": 0,
+        "name": "plate"
+      },
+      "new": {
+        "idx": 0,
+        "name": "plate"
+      },
+      "status": "STAY",
+      "change_types": [],
+      "basis": "exact",
+      "transformations": {
+        "translation": {
+          "detected": false,
+          "dx": 0.0,
+          "dy": 0.0,
+          "dz": 0.0,
+          "distance": 0.0,
+          "moved_axes": [],
+          "reference_point": "volume centroid"
+        },
+        "rotation": {
+          "detected": false,
+          "angle_deg": 0.0,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axis_label": "+Z",
+          "euler_xyz_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "center": [
+            49.741265578,
+            29.869271029,
+            5.0
+          ],
+          "determinacy": "full",
+          "equivalent_solutions": 1
+        },
+        "scaling": {
+          "detected": false,
+          "type": null,
+          "factor": 1.0
+        },
+        "mirror": {
+          "detected": false
+        }
+      },
+      "shape": {
+        "changed": false,
+        "volume_old": 57675.22143634345,
+        "volume_new": 57675.22143634345,
+        "volume_ratio": 1.0,
+        "area_old": 15489.026524130308,
+        "area_new": 15489.026524130308,
+        "faces_old": 8,
+        "faces_new": 8,
+        "edges_old": 18,
+        "edges_new": 18,
+        "vertices_old": 12,
+        "vertices_new": 12,
+        "topology_similarity": 1.0,
+        "geometry_similarity": 1.0
+      },
+      "matrix_4x4": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scores": {
+        "total": 1.0,
+        "shape": 1.0,
+        "spatial": 1.0,
+        "size": 1.0
+      }
+    },
+    {
+      "old": {
+        "idx": 1,
+        "name": "bracket"
+      },
+      "new": {
+        "idx": 1,
+        "name": "bracket"
+      },
+      "status": "MODIFIED",
+      "change_types": [
+        "TRANSLATION"
+      ],
+      "basis": "exact",
+      "transformations": {
+        "translation": {
+          "detected": true,
+          "dx": 5.0,
+          "dy": -3.0,
+          "dz": 2.0,
+          "distance": 6.164414003,
+          "moved_axes": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "reference_point": "volume centroid"
+        },
+        "rotation": {
+          "detected": false,
+          "angle_deg": 0.0,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axis_label": "+Z",
+          "euler_xyz_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "center": [
+            220.0,
+            13.571428571,
+            13.571428571
+          ],
+          "determinacy": "full",
+          "equivalent_solutions": 2,
+          "note": "object has 2 symmetry-equivalent orientations; the smallest rotation is reported"
+        },
+        "scaling": {
+          "detected": false,
+          "type": null,
+          "factor": 1.0
+        },
+        "mirror": {
+          "detected": false
+        }
+      },
+      "shape": {
+        "changed": false,
+        "volume_old": 28000.0,
+        "volume_new": 28000.0,
+        "volume_ratio": 1.0,
+        "area_old": 7799.999999999999,
+        "area_new": 7799.999999999999,
+        "faces_old": 8,
+        "faces_new": 8,
+        "edges_old": 18,
+        "edges_new": 18,
+        "vertices_old": 12,
+        "vertices_new": 12,
+        "topology_similarity": 1.0,
+        "geometry_similarity": 1.0
+      },
+      "matrix_4x4": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          5.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -3.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          2.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scores": {
+        "total": 0.930916,
+        "shape": 1.0,
+        "spatial": 0.76972,
+        "size": 1.0
+      }
+    },
+    {
+      "old": {
+        "idx": 2,
+        "name": "block"
+      },
+      "new": {
+        "idx": 2,
+        "name": "block"
+      },
+      "status": "MODIFIED",
+      "change_types": [
+        "ROTATION"
+      ],
+      "basis": "exact",
+      "transformations": {
+        "translation": {
+          "detected": false,
+          "dx": 0.0,
+          "dy": 0.0,
+          "dz": 0.0,
+          "distance": 0.0,
+          "moved_axes": [],
+          "reference_point": "volume centroid"
+        },
+        "rotation": {
+          "detected": true,
+          "angle_deg": 30.0,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axis_label": "+Z",
+          "euler_xyz_deg": [
+            0.0,
+            0.0,
+            30.0
+          ],
+          "center": [
+            410.365743688,
+            15.548615532,
+            20.0
+          ],
+          "determinacy": "full",
+          "equivalent_solutions": 1
+        },
+        "scaling": {
+          "detected": false,
+          "type": null,
+          "factor": 1.0
+        },
+        "mirror": {
+          "detected": false
+        }
+      },
+      "shape": {
+        "changed": false,
+        "volume_old": 21989.380701702532,
+        "volume_new": 21989.380701703678,
+        "volume_ratio": 1.0000000000000522,
+        "area_old": 6104.7786842339265,
+        "area_new": 6104.778684234056,
+        "faces_old": 7,
+        "faces_new": 7,
+        "edges_old": 15,
+        "edges_new": 15,
+        "vertices_old": 10,
+        "vertices_new": 10,
+        "topology_similarity": 1.0,
+        "geometry_similarity": 1.0
+      },
+      "matrix_4x4": [
+        [
+          0.866025404,
+          -0.5,
+          0.0,
+          62.752892577
+        ],
+        [
+          0.5,
+          0.866025404,
+          0.0,
+          -203.099752356
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scores": {
+        "total": 0.927392,
+        "shape": 1.0,
+        "spatial": 0.757972,
+        "size": 1.0
+      }
+    },
+    {
+      "old": {
+        "idx": 3,
+        "name": "pin"
+      },
+      "new": {
+        "idx": 3,
+        "name": "pin"
+      },
+      "status": "MODIFIED",
+      "change_types": [
+        "UNIFORM_SCALING"
+      ],
+      "basis": "exact",
+      "transformations": {
+        "translation": {
+          "detected": false,
+          "dx": 0.0,
+          "dy": 0.0,
+          "dz": 0.0,
+          "distance": 0.0,
+          "moved_axes": [],
+          "reference_point": "volume centroid"
+        },
+        "rotation": {
+          "detected": false,
+          "angle_deg": 0.0,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axis_label": "+Z",
+          "euler_xyz_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "center": [
+            600.0,
+            0.0,
+            15.0
+          ],
+          "determinacy": "axisymmetric",
+          "equivalent_solutions": 2,
+          "symmetry_axis_old": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "note": "object is rotationally symmetric about its own axis: the reported rotation is the exact minimal rotation of that axis; spin about the axis itself is not observable"
+        },
+        "scaling": {
+          "detected": true,
+          "type": "uniform",
+          "factor": 1.5
+        },
+        "mirror": {
+          "detected": false
+        }
+      },
+      "shape": {
+        "changed": false,
+        "volume_old": 2356.1944901923416,
+        "volume_new": 7952.156404399162,
+        "volume_ratio": 3.375000000000004,
+        "area_old": 1099.5574287564898,
+        "area_new": 2474.0042147021013,
+        "faces_old": 3,
+        "faces_new": 3,
+        "edges_old": 3,
+        "edges_new": 3,
+        "vertices_old": 2,
+        "vertices_new": 2,
+        "topology_similarity": 1.0,
+        "geometry_similarity": 1.0
+      },
+      "matrix_4x4": [
+        [
+          1.5,
+          0.0,
+          0.0,
+          -300.0
+        ],
+        [
+          0.0,
+          1.5,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.5,
+          -7.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scores": {
+        "total": 0.753704,
+        "shape": 1.0,
+        "spatial": 0.648148,
+        "size": 0.296296
+      }
+    },
+    {
+      "old": {
+        "idx": 4,
+        "name": "housing"
+      },
+      "new": {
+        "idx": 4,
+        "name": "housing"
+      },
+      "status": "MODIFIED",
+      "change_types": [
+        "TRANSLATION",
+        "ROTATION",
+        "UNIFORM_SCALING"
+      ],
+      "basis": "exact",
+      "transformations": {
+        "translation": {
+          "detected": true,
+          "dx": 3.0,
+          "dy": 4.0,
+          "dz": 5.0,
+          "distance": 7.071067812,
+          "moved_axes": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "reference_point": "volume centroid"
+        },
+        "rotation": {
+          "detected": true,
+          "angle_deg": 45.0,
+          "axis": [
+            0.577350269,
+            0.577350269,
+            0.577350269
+          ],
+          "axis_label": "oblique",
+          "euler_xyz_deg": [
+            32.154548,
+            18.096431,
+            32.154548
+          ],
+          "center": [
+            820.790419162,
+            15.494011976,
+            9.209580838
+          ],
+          "determinacy": "full",
+          "equivalent_solutions": 1
+        },
+        "scaling": {
+          "detected": true,
+          "type": "uniform",
+          "factor": 1.2
+        },
+        "mirror": {
+          "detected": false
+        }
+      },
+      "shape": {
+        "changed": false,
+        "volume_old": 20040.0,
+        "volume_new": 34629.119999996874,
+        "volume_ratio": 1.727999999999844,
+        "area_old": 6087.999999999999,
+        "area_new": 8766.719999999319,
+        "faces_old": 11,
+        "faces_new": 11,
+        "edges_old": 24,
+        "edges_new": 24,
+        "vertices_old": 16,
+        "vertices_new": 16,
+        "topology_similarity": 1.0,
+        "geometry_similarity": 1.0
+      },
+      "matrix_4x4": [
+        [
+          0.965685425,
+          -0.372740661,
+          0.607055236,
+          31.349598435
+        ],
+        [
+          0.607055236,
+          0.965685425,
+          -0.372740661,
+          -490.300665992
+        ],
+        [
+          -0.372740661,
+          0.607055236,
+          0.965685425,
+          301.852265161
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scores": {
+        "total": 0.770933,
+        "shape": 1.0,
+        "spatial": 0.517306,
+        "size": 0.578704
+      }
+    },
+    {
+      "old": {
+        "idx": 5,
+        "name": "rib"
+      },
+      "new": {
+        "idx": 5,
+        "name": "rib"
+      },
+      "status": "MODIFIED",
+      "change_types": [
+        "NON_UNIFORM_SCALING"
+      ],
+      "basis": "exact",
+      "transformations": {
+        "translation": {
+          "detected": false,
+          "dx": 0.0,
+          "dy": 0.0,
+          "dz": 0.0,
+          "distance": 0.0,
+          "moved_axes": [],
+          "reference_point": "volume centroid"
+        },
+        "rotation": {
+          "detected": false,
+          "angle_deg": 0.0,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axis_label": "+Z",
+          "euler_xyz_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "center": [
+            1005.0,
+            25.0,
+            2.5
+          ],
+          "determinacy": "full",
+          "equivalent_solutions": 24,
+          "note": "object has 24 symmetry-equivalent orientations; the smallest rotation is reported"
+        },
+        "scaling": {
+          "detected": true,
+          "type": "non_uniform",
+          "axis_factors": [
+            2.0,
+            1.0,
+            1.0
+          ],
+          "axes_old_frame": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "note": "factors differ per axis -> not a uniform scaling; factors along the listed axes of OLD"
+        },
+        "mirror": {
+          "detected": false
+        }
+      },
+      "shape": {
+        "changed": false,
+        "volume_old": 2499.9999999999995,
+        "volume_new": 4999.999999999999,
+        "volume_ratio": 2.0,
+        "area_old": 1599.9999999999995,
+        "area_new": 2699.999999999999,
+        "faces_old": 6,
+        "faces_new": 6,
+        "edges_old": 12,
+        "edges_new": 12,
+        "vertices_old": 8,
+        "vertices_new": 8,
+        "topology_similarity": 1.0,
+        "geometry_similarity": 0.970785
+      },
+      "matrix_4x4": [
+        [
+          2.0,
+          0.0,
+          0.0,
+          -1005.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scores": {
+        "total": 0.775,
+        "shape": 0.9,
+        "spatial": 0.75,
+        "size": 0.5
+      }
+    },
+    {
+      "old": {
+        "idx": 6,
+        "name": "boss"
+      },
+      "new": {
+        "idx": 6,
+        "name": "boss"
+      },
+      "status": "MODIFIED",
+      "change_types": [
+        "TRANSLATION",
+        "SHAPE_CHANGE"
+      ],
+      "basis": "partial_alignment",
+      "transformations": {
+        "translation": {
+          "detected": true,
+          "dx": 2.0,
+          "dy": 0.0,
+          "dz": 0.0,
+          "distance": 2.0,
+          "moved_axes": [
+            "X"
+          ],
+          "reference_point": "old volume centroid (carried by the unchanged faces)"
+        },
+        "rotation": {
+          "detected": false,
+          "angle_deg": 0.0,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axis_label": "+Z",
+          "euler_xyz_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "center": [
+            1215.0,
+            15.0,
+            15.0
+          ],
+          "determinacy": "full",
+          "equivalent_solutions": 1
+        },
+        "scaling": {
+          "detected": false,
+          "type": null
+        },
+        "mirror": {
+          "detected": false
+        }
+      },
+      "shape": {
+        "changed": true,
+        "volume_old": 27000.0,
+        "volume_new": 24643.80550980757,
+        "volume_ratio": 0.9127335374002804,
+        "area_old": 5400.0,
+        "area_new": 6185.39816339751,
+        "faces_old": 6,
+        "faces_new": 7,
+        "edges_old": 12,
+        "edges_new": 15,
+        "vertices_old": 8,
+        "vertices_new": 10,
+        "topology_similarity": 0.412381,
+        "geometry_similarity": 0.817802,
+        "unchanged_area_fraction": 0.621472,
+        "unchanged_faces": 4,
+        "removed_or_modified_old_faces": [
+          4,
+          5
+        ],
+        "added_or_modified_new_faces": [
+          2,
+          4,
+          6
+        ]
+      },
+      "matrix_4x4": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          2.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scores": {
+        "total": 0.741137,
+        "shape": 0.566009,
+        "spatial": 0.918621,
+        "size": 0.912734
+      }
+    },
+    {
+      "old": {
+        "idx": 7,
+        "name": "shaft"
+      },
+      "new": {
+        "idx": 7,
+        "name": "shaft"
+      },
+      "status": "MODIFIED",
+      "change_types": [
+        "ROTATION"
+      ],
+      "basis": "exact",
+      "transformations": {
+        "translation": {
+          "detected": false,
+          "dx": 0.0,
+          "dy": 0.0,
+          "dz": 0.0,
+          "distance": 0.0,
+          "moved_axes": [],
+          "reference_point": "volume centroid"
+        },
+        "rotation": {
+          "detected": true,
+          "angle_deg": 20.0,
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "axis_label": "+X",
+          "euler_xyz_deg": [
+            20.0,
+            0.0,
+            0.0
+          ],
+          "center": [
+            1400.0,
+            0.0,
+            25.0
+          ],
+          "determinacy": "axisymmetric",
+          "equivalent_solutions": 2,
+          "symmetry_axis_old": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "note": "object is rotationally symmetric about its own axis: the reported rotation is the exact minimal rotation of that axis; spin about the axis itself is not observable"
+        },
+        "scaling": {
+          "detected": false,
+          "type": null,
+          "factor": 1.0
+        },
+        "mirror": {
+          "detected": false
+        }
+      },
+      "shape": {
+        "changed": false,
+        "volume_old": 5654.866776461615,
+        "volume_new": 5654.8667764617,
+        "volume_ratio": 1.000000000000015,
+        "area_old": 2111.150263212465,
+        "area_new": 2111.1502632124934,
+        "faces_old": 3,
+        "faces_new": 3,
+        "edges_old": 3,
+        "edges_new": 3,
+        "vertices_old": 2,
+        "vertices_new": 2,
+        "topology_similarity": 1.0,
+        "geometry_similarity": 1.0
+      },
+      "matrix_4x4": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.939692621,
+          -0.342020143,
+          8.550503583
+        ],
+        [
+          0.0,
+          0.342020143,
+          0.939692621,
+          1.50768448
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scores": {
+        "total": 0.912079,
+        "shape": 1.0,
+        "spatial": 0.70693,
+        "size": 1.0
+      }
+    },
+    {
+      "old": {
+        "idx": 9,
+        "name": "cube"
+      },
+      "new": {
+        "idx": 8,
+        "name": "cube"
+      },
+      "status": "STAY",
+      "change_types": [],
+      "basis": "exact",
+      "transformations": {
+        "translation": {
+          "detected": false,
+          "dx": 0.0,
+          "dy": 0.0,
+          "dz": 0.0,
+          "distance": 0.0,
+          "moved_axes": [],
+          "reference_point": "volume centroid"
+        },
+        "rotation": {
+          "detected": false,
+          "angle_deg": 0.0,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axis_label": "+Z",
+          "euler_xyz_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "center": [
+            1810.0,
+            10.0,
+            10.0
+          ],
+          "determinacy": "full",
+          "equivalent_solutions": 24,
+          "note": "object has 24 symmetry-equivalent orientations; the smallest rotation is reported"
+        },
+        "scaling": {
+          "detected": false,
+          "type": null,
+          "factor": 1.0
+        },
+        "mirror": {
+          "detected": false
+        }
+      },
+      "shape": {
+        "changed": false,
+        "volume_old": 7999.999999999998,
+        "volume_new": 7999.999999999909,
+        "volume_ratio": 0.9999999999999889,
+        "area_old": 2399.9999999999995,
+        "area_new": 2399.999999999982,
+        "faces_old": 6,
+        "faces_new": 6,
+        "edges_old": 12,
+        "edges_new": 12,
+        "vertices_old": 8,
+        "vertices_new": 8,
+        "topology_similarity": 1.0,
+        "geometry_similarity": 1.0
+      },
+      "matrix_4x4": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scores": {
+        "total": 1.0,
+        "shape": 1.0,
+        "spatial": 1.0,
+        "size": 1.0
+      }
+    },
+    {
+      "old": {
+        "idx": 10,
+        "name": "chiral"
+      },
+      "new": {
+        "idx": 9,
+        "name": "chiral"
+      },
+      "status": "MODIFIED",
+      "change_types": [
+        "MIRROR"
+      ],
+      "basis": "exact",
+      "transformations": {
+        "translation": {
+          "detected": false,
+          "dx": 0.0,
+          "dy": 0.0,
+          "dz": 0.0,
+          "distance": 0.0,
+          "moved_axes": [],
+          "reference_point": "volume centroid"
+        },
+        "rotation": {
+          "detected": false,
+          "angle_deg": 0.0,
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axis_label": "+Z",
+          "euler_xyz_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "center": [
+            2020.005452981,
+            15.258471299,
+            9.875672033
+          ],
+          "determinacy": "full",
+          "equivalent_solutions": 1
+        },
+        "scaling": {
+          "detected": false,
+          "type": null,
+          "factor": 1.0
+        },
+        "mirror": {
+          "detected": true,
+          "plane_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "plane_label": "+X",
+          "plane_point": [
+            2020.005452981,
+            15.258471299,
+            9.875672033
+          ],
+          "note": "OLD is reflected in this plane, then the listed rotation (about the plane normal) is applied"
+        }
+      },
+      "shape": {
+        "changed": false,
+        "volume_old": 23044.95583330874,
+        "volume_new": 23044.955833308664,
+        "volume_ratio": 0.9999999999999967,
+        "area_old": 5803.18578948922,
+        "area_new": 5803.18578948926,
+        "faces_old": 12,
+        "faces_new": 12,
+        "edges_old": 21,
+        "edges_new": 21,
+        "vertices_old": 14,
+        "vertices_new": 14,
+        "topology_similarity": 1.0,
+        "geometry_similarity": 1.0
+      },
+      "matrix_4x4": [
+        [
+          -1.0,
+          0.0,
+          0.0,
+          4040.010905962
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scores": {
+        "total": 0.999918,
+        "shape": 1.0,
+        "spatial": 0.999727,
+        "size": 1.0
+      }
+    },
+    {
+      "old": {
+        "idx": 8,
+        "name": "old_only"
+      },
+      "new": null,
+      "status": "DELETION",
+      "change_types": [
+        "DELETION"
+      ],
+      "reason": "no overlapping NEW candidate",
+      "volume": 3375.0,
+      "centroid": [
+        1607.5,
+        7.5,
+        7.5
+      ]
+    },
+    {
+      "old": null,
+      "new": {
+        "idx": 10,
+        "name": "new_only"
+      },
+      "status": "INSERTION",
+      "change_types": [
+        "INSERTION"
+      ],
+      "volume": 2144.6605848506338,
+      "centroid": [
+        2200.0,
+        -7.137338172506853e-17,
+        -6.2450045135165e-17
+      ]
+    },
+    {
+      "old": null,
+      "new": {
+        "idx": 11,
+        "name": "plate_copy"
+      },
+      "status": "INSERTION",
+      "change_types": [
+        "INSERTION"
+      ],
+      "volume": 57675.22143634345,
+      "centroid": [
+        49.74126557760974,
+        529.8692710286869,
+        4.999999999999999
+      ]
+    }
+  ],
+  "config": {
+    "rel_pos_tol": 0.0001,
+    "rel_value_tol": 0.0001,
+    "angle_tol_deg": 0.01,
+    "abs_tol": 1e-06,
+    "translation_eps": 0.0001,
+    "rotation_eps_deg": 0.001,
+    "scale_eps": 1e-05,
+    "aabb_margin": 0.0,
+    "w_shape": 0.5,
+    "w_spatial": 0.3,
+    "w_size": 0.2,
+    "min_shape_similarity": 0.35,
+    "min_score": 0.3,
+    "max_anchor_faces": 4,
+    "max_hypotheses": 4000,
+    "partial_min_support": 0.2,
+    "detect_mirror": true,
+    "detect_nonuniform": true
+  },
+  "files": {
+    "old": "examples/old.step",
+    "new": "examples/new.step"
+  }
+}

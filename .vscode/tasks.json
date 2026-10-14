@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "make out dir",
+      "type": "shell",
+      "command": "python",
+      "args": ["-c", "import os; os.makedirs('out', exist_ok=True)"],
+      "problemMatcher": []
+    },
+    {
+      "label": "install requirements",
+      "type": "shell",
+      "command": "python -m pip install -r requirements.txt",
+      "problemMatcher": []
+    }
+  ]
+}

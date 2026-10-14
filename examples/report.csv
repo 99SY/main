@@ -1,0 +1,14 @@
+old_idx,old_name,new_idx,new_name,status,change_types,dx,dy,dz,rot_angle_deg,rot_axis_x,rot_axis_y,rot_axis_z,rot_determinacy,scale_type,scale_factor,volume_ratio
+0,plate,0,plate,STAY,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,full,,1.0,1.0
+1,bracket,1,bracket,MODIFIED,TRANSLATION,5.0,-3.0,2.0,0.0,0.0,0.0,1.0,full,,1.0,1.0
+2,block,2,block,MODIFIED,ROTATION,0.0,0.0,0.0,30.0,0.0,0.0,1.0,full,,1.0,1.0000000000000522
+3,pin,3,pin,MODIFIED,UNIFORM_SCALING,0.0,0.0,0.0,0.0,0.0,0.0,1.0,axisymmetric,uniform,1.5,3.375000000000004
+4,housing,4,housing,MODIFIED,TRANSLATION|ROTATION|UNIFORM_SCALING,3.0,4.0,5.0,45.0,0.577350269,0.577350269,0.577350269,full,uniform,1.2,1.727999999999844
+5,rib,5,rib,MODIFIED,NON_UNIFORM_SCALING,0.0,0.0,0.0,0.0,0.0,0.0,1.0,full,non_uniform,,2.0
+6,boss,6,boss,MODIFIED,TRANSLATION|SHAPE_CHANGE,2.0,0.0,0.0,0.0,0.0,0.0,1.0,full,,,0.9127335374002804
+7,shaft,7,shaft,MODIFIED,ROTATION,0.0,0.0,0.0,20.0,1.0,0.0,0.0,axisymmetric,,1.0,1.000000000000015
+9,cube,8,cube,STAY,,0.0,0.0,0.0,0.0,0.0,0.0,1.0,full,,1.0,0.9999999999999889
+10,chiral,9,chiral,MODIFIED,MIRROR,0.0,0.0,0.0,0.0,0.0,0.0,1.0,full,,1.0,0.9999999999999967
+8,old_only,,,DELETION,DELETION,,,,,,,,,,,
+,,10,new_only,INSERTION,INSERTION,,,,,,,,,,,
+,,11,plate_copy,INSERTION,INSERTION,,,,,,,,,,,

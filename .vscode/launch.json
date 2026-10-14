@@ -1,0 +1,52 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "step_diff: compare example OLD/NEW",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "step_diff",
+      "args": [
+        "examples/old.step",
+        "examples/new.step",
+        "-o", "out/report.json",
+        "--csv", "out/report.csv"
+      ],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "make out dir",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "step_diff: compare chosen STEP files",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "step_diff",
+      "args": ["${input:oldStep}", "${input:newStep}", "-o", "out/report.json"],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "make out dir",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "examples: regenerate demo STEP files",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/examples/make_demo.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "pytest: all tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["-q"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ],
+  "inputs": [
+    { "id": "oldStep", "type": "promptString", "description": "OLD STEP file path", "default": "examples/old.step" },
+    { "id": "newStep", "type": "promptString", "description": "NEW STEP file path", "default": "examples/new.step" }
+  ]
+}

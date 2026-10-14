@@ -1,0 +1,4 @@
+cadquery-ocp>=7.7    # OpenCascade (OCP) Python bindings - STEP / B-Rep kernel
+numpy>=1.24
+scipy>=1.10          # Hungarian assignment, KD-tree, rotation conversions
+pytest>=7            # tests only
