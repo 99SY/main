@@ -1,4 +1,4 @@
-"""Synthetic OLD/NEW STEP pairs with known ground truth (for tests and demos)."""
+"""Test helpers: synthetic shapes with known ground truth and a named STEP writer."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -10,8 +10,17 @@ from OCP.BRepBuilderAPI import BRepBuilderAPI_Transform
 from OCP.BRepPrimAPI import BRepPrimAPI_MakeBox, BRepPrimAPI_MakeCylinder, BRepPrimAPI_MakeSphere
 from OCP.gp import gp_Ax1, gp_Ax2, gp_Dir, gp_Pnt, gp_Trsf, gp_Vec
 
-from . import occ
-from .step_io import write_step
+from OCP.IFSelect import IFSelect_RetDone
+from OCP.STEPCAFControl import STEPCAFControl_Writer
+from OCP.TCollection import TCollection_ExtendedString
+from OCP.TDataStd import TDataStd_Name
+from OCP.TDocStd import TDocStd_Document
+from OCP.XCAFDoc import XCAFDoc_DocumentTool
+
+import sys  # noqa: E402
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import step_compare as occ  # noqa: E402
 
 
 # --------------------------------------------------------------------------- #
@@ -185,3 +194,26 @@ def write_demo(directory: str | Path) -> tuple[Path, Path, dict]:
     write_step(po, old)
     write_step(pn, new)
     return po, pn, expected
+
+
+def write_step(path, objects):
+    """Write named shapes as separate products in one STEP file."""
+    occ.silence_occ()
+    doc = TDocStd_Document(TCollection_ExtendedString("MDTV-XCAF"))
+    tool = XCAFDoc_DocumentTool.ShapeTool_s(doc.Main())
+    for name, shape in objects:
+        label = tool.AddShape(shape, False)
+        TDataStd_Name.Set_s(label, TCollection_ExtendedString(name))
+    writer = STEPCAFControl_Writer()
+    writer.SetNameMode(True)
+    if not writer.Transfer(doc) or writer.Write(str(path)) != IFSelect_RetDone:
+        raise IOError(f"cannot write STEP file: {path}")
+
+
+if __name__ == "__main__":  # regenerate examples/old.step, examples/new.step
+    import json
+
+    here = Path(__file__).resolve().parents[1] / "examples"
+    po, pn, exp = write_demo(here)
+    (here / "expected.json").write_text(json.dumps(exp, indent=2))
+    print(po, pn)

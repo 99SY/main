@@ -5,8 +5,8 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from step_diff import Config, compare_objects  # noqa: E402
-from step_diff.features import extract_features  # noqa: E402
+from step_compare import Config, compare_objects  # noqa: E402
+from step_compare import extract_features  # noqa: E402
 
 
 def feats(named_shapes):

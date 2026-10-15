@@ -1,4 +1,4 @@
-# step_diff — STEP B-Rep 기반 설계 변경 객체 대응 및 변경 유형 판정
+# step_compare — STEP B-Rep 기반 설계 변경 객체 대응 및 변경 유형 판정
 
 설계 변경 **전(OLD)** STEP 파일과 **후(NEW)** STEP 파일을 입력받아, 각 파일 속 개별 CAD 객체 사이의
 **전역 1:1 대응 관계**, **변환 정보(이동·회전·스케일·대칭)**, **설계 변경 유형**(STAY / MODIFIED /
@@ -21,37 +21,17 @@ pip install -r requirements.txt    # cadquery-ocp(OpenCascade), numpy, scipy, py
 
 `cadquery-ocp`는 OpenCascade 커널의 Python 바인딩(OCP)입니다. pip로 설치되며 conda가 필요 없습니다.
 
-### VS Code
-- 폴더를 열면 `.vscode/settings.json`이 `.venv` 인터프리터와 pytest를 자동 설정합니다.
-- **실행 및 디버그(F5)** 구성:
-  - `step_diff: compare example OLD/NEW` – 예제 파일 비교, `out/report.json`, `out/report.csv` 생성
-  - `step_diff: compare chosen STEP files` – 실행 시 OLD/NEW 경로를 입력받아 비교
-  - `examples: regenerate demo STEP files` – 예제 STEP 재생성
-  - `pytest: all tests`
-- 테스트 탐색기에서 `tests/`의 테스트를 바로 실행할 수 있습니다.
+## 2. 사용법 — 파일 1개(`step_compare.py`) 실행
 
-## 2. 사용법
-
-### 가장 간단한 방법: `run.py` 하나 실행
-VS Code에서 `run.py`를 열고 우측 상단 **▷ (Run Python File)** 또는 **F5** (`▶ run.py` 구성)를 누르면
-터미널에 요약 표와 객체별 상세 결과(이동 dx/dy/dz, 회전 각도·축, 스케일 factor, 대칭, 형상 변경)가
-바로 출력되고, `out/report.json`, `out/report.csv`도 저장됩니다.
-다른 파일을 비교하려면 `run.py` 상단의 `OLD_STEP`, `NEW_STEP` 경로만 바꾸세요.
-(예제 파일이 없으면 자동으로 생성합니다.) 터미널에서는 `python run.py`로 실행합니다.
-
-### CLI / Python API
-
-```bash
-python -m step_diff OLD.step NEW.step -o report.json --csv report.csv
-```
-
-```python
-from step_diff import compare_step_files, Config
-
-report = compare_step_files("old.step", "new.step", Config(rel_pos_tol=1e-4))
-for r in report["results"]:
-    print(r["old"], r["new"], r["status"], r["change_types"])
-```
+1. `step_compare.py` 상단의 **[입력 설정]**에서 경로를 수정합니다.
+   ```python
+   OLD_STEP = r"examples/old.step"   # 절대 경로 또는 이 파일 기준 상대 경로
+   NEW_STEP = r"examples/new.step"
+   SHOW_DETAILS = True               # 객체별 상세 수치 출력
+   ```
+2. VS Code에서 `step_compare.py`를 열고 **▷ (Run Python File)** 또는 **F5**를 누릅니다.
+   (터미널에서는 `python step_compare.py`)
+3. 요약 표와 객체별 상세 결과가 **터미널에만** 출력됩니다. 파일은 저장하지 않습니다.
 
 예제(`examples/old.step`, `examples/new.step`, 정답은 `examples/expected.json`) 실행 결과:
 
@@ -81,17 +61,17 @@ OLD                      NEW                      RESULT
 
 ## 3. 전체 파이프라인
 
-| 단계 | 내용 | 코드 |
-|---|---|---|
-| 1 | OLD/NEW STEP 읽기 및 객체 분리 (Solid 단위, 표면 모델은 Shell 단위). 어셈블리 배치(Location) 적용, 제품/인스턴스 이름 보존 | `step_io.py` |
-| 2 | 각 객체에 IDX 부여 (OLD 0..N-1, NEW 0..M-1) | `step_io.py` |
-| 3 | B-Rep 특징 추출 | `features.py` |
-| 4 | OLD 0부터 AABB 생성 → AABB가 겹치는 NEW 객체만 후보로 선정 | `pipeline.py`, `compare.py` |
-| 5 | 후보 쌍마다 변환 추정 + 유사도 계산 | `transform.py`, `compare.py` |
-| 6 | 전역 1:1 매칭 (헝가리안 알고리즘, 총 유사도 최대화) | `pipeline.py` |
-| 7 | 매칭 쌍: 1차 STAY/MODIFIED → 2차 이동/회전/스케일 → 3차 독립 성분 분리. 미매칭 OLD → DELETION, 미매칭 NEW → INSERTION | `compare.py`, `pipeline.py` |
+| 단계 | 내용 |
+|---|---|
+| 1 | OLD/NEW STEP 읽기 및 객체 분리 (Solid 단위, 표면 모델은 Shell 단위). 어셈블리 배치(Location) 적용, 제품/인스턴스 이름 보존 |
+| 2 | 각 객체에 IDX 부여 (OLD 0..N-1, NEW 0..M-1) |
+| 3 | B-Rep 특징 추출 |
+| 4 | OLD 0부터 AABB 생성 → AABB가 겹치는 NEW 객체만 후보로 선정 |
+| 5 | 후보 쌍마다 변환 추정 + 유사도 계산 |
+| 6 | 전역 1:1 매칭 (헝가리안 알고리즘, 총 유사도 최대화) |
+| 7 | 매칭 쌍: 1차 STAY/MODIFIED → 2차 이동/회전/스케일 → 3차 독립 성분 분리. 미매칭 OLD → DELETION, 미매칭 NEW → INSERTION |
 
-### 3.1 B-Rep 특징 (`features.py`)
+### 3.1 B-Rep 특징 
 모두 B-Rep의 정확한 기하로부터 계산합니다 (샘플링·메쉬 없음).
 
 | 수준 | 특징 |
@@ -106,7 +86,7 @@ OLD                      NEW                      RESULT
 `OLD_i`와 `NEW_j`의 AABB가 (수치 허용오차 + `aabb_margin`) 안에서 겹칠 때만 후보입니다.
 겹치지 않으면 형상이 완전히 같아도 **설계 의도가 다른 객체**로 보고 비교하지 않습니다.
 
-### 3.3 변환 추정 (`transform.py`) — 결정론적, 전수 검증
+### 3.3 변환 추정  — 결정론적, 전수 검증
 세 단계 추정기를 순서대로 적용합니다.
 
 **(1) 유사 변환** `x' = c_new + s·Q·(x − c_old)` (Q = 회전, 또는 회전+대칭)
@@ -170,41 +150,22 @@ size    = min(V_old, V_new) / max(V_old, V_new)
 
 ---
 
-## 4. 출력 형식 (JSON)
+## 4. 터미널 출력 형식
 
-```jsonc
-{
-  "summary": { "old_objects": 11, "new_objects": 12, "matched": 10,
-               "status_counts": {...}, "change_type_counts": {...} },
-  "old_objects": [ { "idx": 0, "name": "plate", "volume": ..., "bbox_min": [...], "face_types": {...}, ... } ],
-  "new_objects": [ ... ],
-  "candidates": { "0": [ { "new_idx": 0, "score": 1.0, "alignment": "SIMILARITY", "eligible": true } ] },
-  "results": [
-    {
-      "old": {"idx": 4, "name": "housing"}, "new": {"idx": 4, "name": "housing"},
-      "status": "MODIFIED",
-      "change_types": ["TRANSLATION", "ROTATION", "UNIFORM_SCALING"],
-      "basis": "exact",                     // exact | partial_alignment | centroid_only
-      "transformations": {
-        "translation": {"detected": true, "dx": 3.0, "dy": 4.0, "dz": 5.0, "moved_axes": ["X","Y","Z"]},
-        "rotation":    {"detected": true, "angle_deg": 45.0, "axis": [0.577, 0.577, 0.577],
-                        "axis_label": "oblique", "euler_xyz_deg": [...], "center": [...],
-                        "determinacy": "full", "equivalent_solutions": 1},
-        "scaling":     {"detected": true, "type": "uniform", "factor": 1.2},
-        "mirror":      {"detected": false}
-      },
-      "shape": { "changed": false, "volume_ratio": 1.728, "faces_old": 11, "faces_new": 11, ... },
-      "matrix_4x4": [[...], [...], [...], [0, 0, 0, 1]],
-      "scores": {"total": 0.77, "shape": 1.0, "spatial": 0.52, "size": 0.58}
-    },
-    { "old": {"idx": 8, "name": "old_only"}, "new": null, "status": "DELETION", ... },
-    { "old": null, "new": {"idx": 10, "name": "new_only"}, "status": "INSERTION", ... }
-  ]
-}
+1. 요약: OLD/NEW 객체 수, 매칭 수, 상태별·변경 유형별 개수
+2. 대응표: `[OLD idx] 이름 | [NEW idx] 이름 | 결과`
+3. 상세 (`SHOW_DETAILS = True`):
 ```
-`--csv`는 결과당 한 행(대응 IDX, 상태, 변경 유형, dx/dy/dz, 회전각/축, 스케일)의 표를 씁니다.
+■ OLD[4] housing  ->  NEW[4] housing
+  status       : MODIFIED
+  change types : TRANSLATION, ROTATION, UNIFORM_SCALING
+  translation  : YES  dx=+3.000000  dy=+4.000000  dz=+5.000000  (|d|=7.071068)
+  rotation     : YES  angle=45.000000 deg  axis=[+0.577350, +0.577350, +0.577350] (oblique)  determinacy=full
+  scaling      : YES  uniform, factor=1.200000000
+  shape        : same  faces 11->11, edges 24->24, volume x1.728000
+```
 
-## 5. 허용오차 (`config.py`, CLI 옵션)
+## 5. 허용오차 (`step_compare.py`의 `Config` 클래스)
 
 | 항목 | 기본값 | 의미 |
 |---|---|---|
@@ -215,9 +176,9 @@ size    = min(V_old, V_new) / max(V_old, V_new)
 | `rotation_eps_deg` | 1e-3 | 이 값 이하의 회전은 "회전 없음" |
 | `scale_eps` | 1e-5 | `|s−1|`이 이 값 이하이면 "스케일 없음" |
 | `aabb_margin` | 0 | AABB 겹침 판정 추가 여유 |
-| `detect_mirror`, `detect_nonuniform` | True | 확장 변환 탐지 on/off (`--no-mirror`, `--no-nonuniform`) |
+| `detect_mirror`, `detect_nonuniform` | True | 확장 변환 탐지 on/off |
 
-STEP을 내보낸 CAD의 정밀도가 낮으면 `--rel-pos-tol 1e-3 --rel-value-tol 1e-3`처럼 완화하세요.
+STEP을 내보낸 CAD의 정밀도가 낮으면 `Config` 기본값의 `rel_pos_tol`, `rel_value_tol`을 `1e-3` 정도로 완화하세요.
 
 ## 6. 테스트
 
@@ -242,16 +203,8 @@ pytest -q
 
 ## 8. 구조
 ```
-step_diff/
-  occ.py         OCP 버전 호환 계층 (컬렉션, 다운캐스트, 정밀 AABB, 질량 특성)
-  step_io.py     STEP 읽기/쓰기, 어셈블리 전개, 객체 분리, 이름
-  features.py    B-Rep 특징, 면 인접 그래프, WL 위상 해시
-  transform.py   유사 변환 / 대칭 / 비균일 스케일 / 부분 강체 정합 추정
-  compare.py     유사도, 쌍 분석, 변경 유형 분류
-  pipeline.py    AABB 필터 → 쌍 분석 → 헝가리안 전역 매칭 → 결과
-  report.py      텍스트/JSON/CSV 출력
-  samples.py     정답이 알려진 예제 형상 생성기
-  __main__.py    CLI
-examples/        예제 OLD/NEW STEP, 정답, 보고서
-tests/           pytest
+step_compare.py   전체 프로그램 (단일 파일): 입력 설정 → STEP 읽기 → B-Rep 특징 → 변환 추정
+                  → 유사도/분류 → 전역 매칭 → 터미널 출력
+examples/         예제 OLD/NEW STEP, 정답(expected.json)
+tests/            pytest (tests/samples.py: 테스트용 형상 생성기, `python tests/samples.py`로 예제 재생성)
 ```

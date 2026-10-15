@@ -1,5 +1,5 @@
 """Global 1:1 matching, AABB filtering, insertion / deletion."""
-from step_diff.samples import block, box, bracket, cylinder, sphere, translated
+from samples import block, box, bracket, cylinder, sphere, translated
 
 
 def test_identical_neighbours_resolved_by_position(compare):

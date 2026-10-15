@@ -9,9 +9,10 @@ from OCP.TDocStd import TDocStd_Document
 from OCP.TopLoc import TopLoc_Location
 from OCP.XCAFDoc import XCAFDoc_DocumentTool
 
-from step_diff.features import extract_features
-from step_diff.samples import block, box
-from step_diff.step_io import load_step, write_step
+from step_compare import extract_features
+from samples import block, box
+from samples import write_step
+from step_compare import load_step
 
 
 def test_names_roundtrip(tmp_path):

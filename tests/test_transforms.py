@@ -2,8 +2,8 @@
 import numpy as np
 import pytest
 
-from step_diff import Config
-from step_diff.samples import (
+from step_compare import Config
+from samples import (
     block,
     box,
     bracket,
@@ -65,7 +65,7 @@ def test_composite_transform_components_are_independent(compare):
 def test_matrix_maps_old_vertices_onto_new(compare):
     b = bracket(0)
     new = translated(rotated(b, (1, 1, 0), 40), (1, 2, 3))
-    from step_diff.features import extract_features
+    from step_compare import extract_features
 
     fo, fn = extract_features(0, "o", b), extract_features(0, "n", new)
     _, by_old, _ = compare([("b", b)], [("b", new)])

@@ -2,8 +2,8 @@
 import numpy as np
 import pytest
 
-from step_diff import compare_step_files
-from step_diff.samples import write_demo
+from step_compare import compare_step_files
+from samples import write_demo
 
 
 @pytest.fixture(scope="module")
