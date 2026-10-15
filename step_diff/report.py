@@ -97,3 +97,54 @@ def write_csv(report: dict, path: str | Path) -> None:
                 row["scale_factor"] = sc.get("factor", "")
                 row["volume_ratio"] = e["shape"].get("volume_ratio")
             w.writerow(row)
+
+
+def format_details(report: dict) -> str:
+    """Per-object breakdown of every detected change component."""
+    out = []
+    for e in report["results"]:
+        o = f"OLD[{e['old']['idx']}] {e['old']['name']}" if e["old"] else "OLD -"
+        n = f"NEW[{e['new']['idx']}] {e['new']['name']}" if e["new"] else "NEW -"
+        out.append(f"\n■ {o}  ->  {n}")
+        out.append(f"  status       : {e['status']}")
+        out.append(f"  change types : {', '.join(e['change_types']) or '-'}")
+        tr = e.get("transformations")
+        if not tr:
+            continue
+        t, r, sc, mi = tr["translation"], tr["rotation"], tr["scaling"], tr["mirror"]
+        if "dx" in t:
+            out.append(
+                f"  translation  : {'YES' if t['detected'] else 'no '}  "
+                f"dx={t['dx']:+.6f}  dy={t['dy']:+.6f}  dz={t['dz']:+.6f}  (|d|={t['distance']:.6f})"
+            )
+        elif "centroid_shift" in t:
+            c = t["centroid_shift"]
+            out.append(f"  translation  : unknown (centroid shift {c[0]:+.6f}, {c[1]:+.6f}, {c[2]:+.6f})")
+        if "angle_deg" in r:
+            axis = ", ".join(f"{a:+.6f}" for a in r["axis"])
+            out.append(
+                f"  rotation     : {'YES' if r['detected'] else 'no '}  angle={r['angle_deg']:.6f} deg  "
+                f"axis=[{axis}] ({r['axis_label']})  determinacy={r['determinacy']}"
+            )
+            if r.get("note"):
+                out.append(f"                 note: {r['note']}")
+        if sc.get("type") == "uniform":
+            out.append(f"  scaling      : YES  uniform, factor={sc['factor']:.9f}")
+        elif sc.get("type") == "non_uniform":
+            f = ", ".join(f"{v:.9f}" for v in sc["axis_factors"])
+            out.append(f"  scaling      : YES  non-uniform, axis factors=[{f}]")
+        else:
+            out.append("  scaling      : no ")
+        if mi.get("detected"):
+            nv = ", ".join(f"{a:+.6f}" for a in mi["plane_normal"])
+            out.append(f"  mirror       : YES  plane normal=[{nv}] ({mi['plane_label']})")
+        sh = e["shape"]
+        vr = sh.get("volume_ratio")
+        out.append(
+            f"  shape        : {'CHANGED' if sh['changed'] else 'same'}  "
+            f"faces {sh['faces_old']}->{sh['faces_new']}, edges {sh['edges_old']}->{sh['edges_new']}"
+            + (f", volume x{vr:.6f}" if vr else "")
+        )
+        if "unchanged_area_fraction" in sh:
+            out.append(f"                 unchanged area fraction={sh['unchanged_area_fraction']:.4f}")
+    return "\n".join(out)

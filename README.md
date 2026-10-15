@@ -32,6 +32,15 @@ pip install -r requirements.txt    # cadquery-ocp(OpenCascade), numpy, scipy, py
 
 ## 2. 사용법
 
+### 가장 간단한 방법: `run.py` 하나 실행
+VS Code에서 `run.py`를 열고 우측 상단 **▷ (Run Python File)** 또는 **F5** (`▶ run.py` 구성)를 누르면
+터미널에 요약 표와 객체별 상세 결과(이동 dx/dy/dz, 회전 각도·축, 스케일 factor, 대칭, 형상 변경)가
+바로 출력되고, `out/report.json`, `out/report.csv`도 저장됩니다.
+다른 파일을 비교하려면 `run.py` 상단의 `OLD_STEP`, `NEW_STEP` 경로만 바꾸세요.
+(예제 파일이 없으면 자동으로 생성합니다.) 터미널에서는 `python run.py`로 실행합니다.
+
+### CLI / Python API
+
 ```bash
 python -m step_diff OLD.step NEW.step -o report.json --csv report.csv
 ```
